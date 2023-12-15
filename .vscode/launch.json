@@ -8,7 +8,7 @@
       "name": "debug flutter",
       "request": "launch",
       "type": "dart",
-      //"flutterMode": "debug"
+      "flutterMode": "debug"
     },
     {
       "name": "profile flutter",
