@@ -14,14 +14,14 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-            seedColor: Color.fromARGB(255, 0, 255, 100),
+            seedColor: const Color.fromARGB(255, 0, 255, 100),
             brightness: Brightness.light),
         useMaterial3: true,
       ),
       darkTheme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-            seedColor: Color.fromARGB(255, 2, 56, 24),
-            background: Color.fromARGB(255, 0, 0, 0),
+            seedColor: const Color.fromARGB(255, 2, 56, 24),
+            background: const Color.fromARGB(255, 0, 0, 0),
             brightness: Brightness.dark),
         useMaterial3: true,
       ),
