@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_flutter_app/Pages/UnknownPage.dart';
 import 'package:my_first_flutter_app/main_page_switcher.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -41,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(
             icon: const Icon(Icons.settings),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => const UnknownPage()));
+              Navigator.pushNamed(context, '/settings');
             },
           ),
         ],

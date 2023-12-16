@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_flutter_app/Pages/unknown_page.dart';
 import 'package:my_first_flutter_app/Pages/home.dart';
+import 'package:my_first_flutter_app/Pages/page2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -7,6 +9,8 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+  // upon startup go to the home page
+
 
   // This widget is the root of your application.
   @override
@@ -26,8 +30,14 @@ class MyApp extends StatelessWidget {
             brightness: Brightness.dark),
         useMaterial3: true,
       ),
-      themeMode: ThemeMode.system,
-      home: const MyHomePage(),
+      routes: {
+        '/home': (context) => const MyHomePage(),
+        '/page2': (context) => Page2(),
+      },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (context) => UnknownPage(name: settings.name));
+      },
+      initialRoute: '/home',
     );
   }
 }

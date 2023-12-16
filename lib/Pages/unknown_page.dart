@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_flutter_app/main_page_switcher.dart';
 
 class UnknownPage extends StatefulWidget {
+  final String title;
   const UnknownPage({
     super.key,
-  });
-
+    String? name,
+  }) : title = name ?? 'Unknown Page';
   @override
   State<UnknownPage> createState() => _unknown_page();
 }
@@ -19,10 +19,15 @@ class _unknown_page extends State<UnknownPage> {
         title: const Text('Page not found'),
         backgroundColor: Theme.of(context).colorScheme.primary,
       ),
-      body: const Center(
-        child: Text(
-          '404',
-          style: TextStyle(fontSize: 50),
+      body: Center(
+        child: Column(
+          children: [
+            Text('Page not found: ${widget.title}'),
+            const Text(
+              '404',
+              style: TextStyle(fontSize: 50),
+            ),
+          ],
         ),
       ),
     );

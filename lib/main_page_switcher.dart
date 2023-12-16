@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_flutter_app/Pages/UnknownPage.dart';
-import 'package:my_first_flutter_app/Pages/page2.dart';
-
-import 'Pages/home.dart';
 
 Widget hamburger(BuildContext context) {
   return Drawer(
@@ -23,26 +19,24 @@ Widget hamburger(BuildContext context) {
           title: const Text('Home'),
           onTap: () {
             // Navigator.pop(context);
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const MyHomePage()),
-            );
+            // Navigator.popUntil(context, ModalRoute.withName('/'));
+            // pop all routes until you get to the home page
+            Navigator.popUntil(context, ModalRoute.withName('/home'));
+            // Navigator.pushNamed(context, '/home');
           },
         ),
         ListTile(
           title: const Text('Page 2'),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Page2()));
+            Navigator.pushNamed(context, '/page2');
           },
         ),
         ListTile(
           title: const Text('Page 3'),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const UnknownPage()));
+            Navigator.pushNamed(context, '/page3');
           },
         ),
         // add a logout button at the bottom
@@ -50,8 +44,7 @@ Widget hamburger(BuildContext context) {
           title: const Text('Logout'),
           onTap: () {
             Navigator.pop(context);
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const UnknownPage()));
+            Navigator.pushNamed(context, '/logout');
           },
         ),
       ],
